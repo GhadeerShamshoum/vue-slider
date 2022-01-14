@@ -16,12 +16,12 @@
             <div class="row justify-content-center ">
                 <div class="ms_container-photos col-9 d-flex">
                     <!-- main photo -->
-                    <div v-for="(element, index) in items" class="ms_itemsContainer col-10" :class="isPresent(index)">
-                        <div  class="ms_mainPhoto col-10 item" :class="isPresent(index)">
+                    <div  class="ms_itemsContainer col-10">
+                        <div v-for="(element, index) in items" class="ms_mainPhoto col-10 item" :class="isPresent(index)">
                             <img :src="element.photo">
-                            <div  class="text justify-conetid-end item" >
-                                <h1 class="title text-white d-flex justify-content-end me-3 " >{{items.title}}</h1>
-                                <p class="text text-white d-flex flex-row-reverse item">{{items.text}}</p>
+                            <div v-for="(element, index) in items" class="text justify-conetid-end item" :class="isPresent(index)" >
+                                <h1 class="title text-white d-flex justify-content-end me-3 " >{{element.title}}</h1>
+                                <p  class="text text-white d-flex flex-row-reverse item">{{element.text}}</p>
                             </div>         
                         </div>
                     </div>
@@ -30,8 +30,8 @@
                     
                     
                     <div class="ms_sidePhotos col-2 flex-column">
-                        <div class="ms_imgContainer">
-                            <img  v-for="(element) in items" class="sidePoto" id="sidePhotos-${i}" :src="element.photo" :class="sidePresent(index)">
+                        <div v-for="(element, index) in items" class="ms_imgContainer" >
+                            <img class="sidePoto" :src="element.photo" :class="sidePresent(index)" >
                         </div> 
                        
     

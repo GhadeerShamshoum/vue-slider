@@ -47,9 +47,8 @@ let app = new Vue({
             return "";
             
         },
-        sidePresent: function( indexPhoto){
-            console.log(indexPhoto, this.present)
-            if(indexPhoto == this.present){
+        sidePresent: function( indexSidePhoto){
+            if(indexSidePhoto == this.present){
                 return "opacity";
             }
             return "";
@@ -63,7 +62,7 @@ let app = new Vue({
         back: function(){
             this.present --;
             if(this.present < 0){
-                this.present = this.items.length;
+                this.present = this.items.length -1;
             }
         }
     }
