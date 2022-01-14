@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    height: 427px;
+  
+}
+
+.row{
+    height: 100%;
+}
+
+.ms_container-photos{
+    height: 100%;
+    
+}
+
+.ms_itemsContainer{
+    height: 100%;
+    position: relative;
+}
+
+.ms_mainPhoto,
+.ms_mainPhoto img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.text{
+    position: absolute;
+    right:14px;
+    bottom:-176px;
+    width: 600px; 
+    height: 325px;   
+}
+
+.ms_sidePhotos{
+   
+    height: 100%;
+    position: relative;  
+}
+
+/* buttons */
+.prev,
+.next{
+background-color: rgba(255, 255, 255, 0.315);
+border-radius: 50%;
+padding:3px 6px;
+}
+
+.prev{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.next{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+
+
+.ms_sidePhotos .ms_imgContainer{
+    height: calc( 100% / 5 );
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    
+}
+
+.ms_imgContainer img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+
+
+.sidePoto.opacity{
+    opacity: 1 ; 
+    border: 3px solid white;
+}
+
+
+
+
+.item {
+    display: none;
+    height: 427px;
+    overflow: hidden;
+}
+
+.active{
+    display: block;
+}
+
+
+.item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
