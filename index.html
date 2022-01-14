@@ -17,19 +17,21 @@
                 <div class="ms_container-photos col-9 d-flex">
                     <!-- main photo -->
                     <div class="ms_itemsContainer col-10">
-                        <div v-for="(element, index) in items" class="ms_mainPhoto col-10 item" :class="isPresent(index)">
+                        <div v-for="(element, index) in items.photos" class="ms_mainPhoto col-10 item" :class="isPresent(index)">
                             <img :src="element">
-                            <div class="text justify-conetid-end">
-                              <h1 class="title text-white d-flex justify-content-end me-3">{{title}}</h1>
-                              <p class="text text-white d-flex flex-row-reverse item">{{text}}</p>
+                            <div v-for="(element, index) in items.title" class="text justify-conetid-end item" :class="isPresent(index)">
+                                <h1 class="title text-white d-flex justify-content-end me-3 " >{{items.title[index]}}</h1>
                             </div>
-                         </div>
+                            <div v-for="(element, index) in items.text" class="text justify-conetid-end item" :class="isPresent(index)">
+                                <p class="text text-white d-flex flex-row-reverse item" :class="isPresent(index)">{{items.text[index]}}</p>
+                            </div>           
+                        </div>
                     </div>
                        
                     <!-- side photos -->
                     <div class="ms_sidePhotos col-2 flex-column">
                         <div class="ms_imgContainer">
-                            <img v-for="(element, index) in items" class="sidePoto" id="sidePhotos" :src="element" :class="sidePresent(index)">
+                            <img v-for="(element) in items.photos" class="sidePoto" id="sidePhotos" :src="element" :class="sidePresent(index)">
                         </div> 
     
                         <div class="prev">
