@@ -3,6 +3,7 @@ let app = new Vue({
     data: {
         
         present: 0,
+        intvl: null,
         items:[
 
             {
@@ -58,12 +59,31 @@ let app = new Vue({
             if(this.present == this.items.length){
                 this.present = 0;
             }
+            
         },
         back: function(){
             this.present --;
             if(this.present < 0){
                 this.present = this.items.length -1;
             }
+        },
+        chosePhoto: function(index){
+            console.log(index)
+            this.present = index;
+        },
+        hoverOut: function(){
+            console.log('dfdf')
+            /*clearInterval(this.next);*/
+            this.intvl = setInterval(this.next, 3000);
+           
+        },
+        hoverIn: function(){
+            clearInterval(this.intvl);
+            
+            
+           console.log('ssj');
+             
+            
         }
     }
 })   

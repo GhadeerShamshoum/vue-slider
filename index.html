@@ -14,7 +14,10 @@
 
         <div class="container">
             <div class="row justify-content-center ">
-                <div class="ms_container-photos col-9 d-flex">
+                <div @mouseleave= "hoverOut" class="ms_container-photos col-9 d-flex" 
+                
+                @mouseover= "hoverIn"
+                 >
                     <!-- main photo -->
                     <div  class="ms_itemsContainer col-10">
                         <div v-for="(element, index) in items" class="ms_mainPhoto col-10 item" :class="isPresent(index)">
@@ -31,7 +34,7 @@
                     
                     <div class="ms_sidePhotos col-2 flex-column">
                         <div v-for="(element, index) in items" class="ms_imgContainer" >
-                            <img class="sidePoto" :src="element.photo" :class="sidePresent(index)" >
+                            <img @click="chosePhoto(index)" class="sidePoto" :src="element.photo" :class="sidePresent(index)"  >
                         </div> 
                        
     
