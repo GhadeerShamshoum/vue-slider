@@ -74,17 +74,21 @@ let app = new Vue({
         hoverOut: function(){
             console.log('dfdf')
             /*clearInterval(this.next);*/
-            this.intvl = setInterval(this.next, 3000);
+            if(this.intvl == null) {
+                this.intvl = setInterval(this.next, 3000);
+            }
            
         },
         hoverIn: function(){
-            clearInterval(this.intvl);
-            
-            
-           console.log('ssj');
-             
-            
+            clearInterval(this.intvl);  
+            this.intvl = null ;
         }
+
+    },
+
+    mounted: function(){
+
+        this.hoverOut();
     }
 })   
 /*const text = 
